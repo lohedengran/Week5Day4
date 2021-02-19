@@ -1,4 +1,4 @@
-﻿loop5();
+﻿loop7();
 
 function loop1() {
 
@@ -77,6 +77,12 @@ function loop5() {
 	    Skapa en array "importantYears" med årtalen 1492, 1789, 1859, 1929
         Använd "for of" för att skriva ut alla årtal
     */
+
+    let importantYears = [1492, 1789, 1859, 1929];
+    for(let x of importantYears) {
+        console.log(`Året är ${x}..`);
+    }
+
     /*
     Extra: 
 
@@ -86,6 +92,10 @@ function loop5() {
         Använd "for of" för att skriva ut alla färger 
 
     */
+   let colours = ["blå", "röd", "grön", "gul", "lila"];
+   for(let x of colours) {
+       console.log(x);
+   }
 }
 
 function loop6() {
@@ -98,6 +108,14 @@ function loop6() {
 	    3) 1859
 	    4) 1929
     */
+        
+
+        let importantYears = [1492, 1789, 1859, 1929];
+        let i = 1;
+        for(let x of importantYears) {
+                console.log(`${i}) ${x}`);
+                i++;
+        }
 
     /*
      Extra: lös uppgiften med ".forEach"
@@ -116,5 +134,14 @@ function loop7() {
 	    Samma som sist men avbryt loopen om årtalet är högre än 1800. Ska alltså ge:
 	    1) 1492
 	    2) 1789
-    */
-}
+        */
+
+       let importantYears = [1492, 1789, 1859, 1929];
+        let i = 1;
+        while(importantYears < 1800) {
+        for(let x of importantYears) {
+                console.log(`${i}) ${x}`);
+                i++;
+        }
+    }
+    }

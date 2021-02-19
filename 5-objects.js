@@ -1,17 +1,17 @@
-﻿
+﻿obj4();
 function obj1() {
-    
-    /*
+  /*
         Skapa ett objekt "person" med uppgifter om Johan Rheborg: förnamn, efternamn, födelseår
         Skriv ut förnamnet
         Skriv ut hans fullständiga namn
     */
-
+  let person = { firstName: "Lo", lastName: "Hedengran", yearOfBirth: 1987 };
+  console.log(person.firstName);
+  console.log(`${person.firstName} ${person.lastName}`);
 }
 
 function obj2() {
-
-    /*
+  /*
        Fortsätt bygg vidare på "person"
        Lägg till ett par rollkaraktärer till objektet "person" (Percy Nilegård, Farbror Barbro...)
        Lägg till adressuppgifter (street, city, country)
@@ -21,12 +21,22 @@ function obj2() {
             Johan bor på gatan Kammakargatan 38 lgh 1401
             Johan har spelat 3 roller, bland annat Percy Nilegård
     */
+  let person = {
+    firstName: "Johan",
+    lastName: "Rheborg",
+    yearOfBirth: 1963,
+    roles: ["Percy Nilegård", "Farbror Barbro"],
+    address: "Kammakargatan 38 lgh 1401",
+  };
+  console.log(`${person.firstName} är född år ${person.yearOfBirth}`);
+  console.log(`${person.firstName} bor på gatan ${person.address}`);
+  console.log(
+    `${person.firstName} har spelat ${person.roles.length} roller, bland annat ${person.roles[0]}`
+  );
 }
 
-
 function obj3() {
-
-    /*
+  /*
        Skapa en array "paintings" med tre målningar (tre element)
        För varje målning finns info: namn, konstnär och året den blev målad
        Skriv ut antalet målningar: "Det finns 3st målningar i arrayen"
@@ -34,15 +44,68 @@ function obj3() {
        Loopa igenom alla målningar med "for of" och skriv ut all info i tabellform
        Tips: använd "padEnd" för att skriva ut tabellen snyggt
     */
+  let paintings = [
+    (painting1 = {
+      namn: "Guernica",
+      konstnär: "Pablo Picasso",
+      år: 1937,
+    }),
+    (painting2 = {
+      namn: "Svanen",
+      konstnär: "Hilma af Klint",
+      år: 1915,
+    }),
+    (painting3 = {
+      namn: "Självporträtt med törnehalsband",
+      konstnär: "Frida Kahlo",
+      år: 1940,
+    }),
+  ];
+
+  console.log(`Det finns ${paintings.length} st målningar i arrayen`);
+  console.log(
+    `${painting3.konstnär} målade ${painting3.namn} år ${painting3.år}`
+  );
+
+  for (const item of paintings) {
+    console.table(item);
+  }
 }
 
 function obj4() {
-
-    /*
+  /*
        Skapa ett objekt "skriet" (av Edvard Munch 1893). Lägg till den i "paintings" mha "push".
        Skriv ut dess år mha variablen "paintings" (alltså 1893) 
        Använd "pop" flera gånger för att plocka bort de tre sista målningarna
        Skriv ut antalet målningar i arrayen 
     */
-}
+  let paintings = [
+    (painting1 = {
+      namn: "Guernica",
+      konstnär: "Pablo Picasso",
+      år: 1937,
+    }),
+    (painting2 = {
+      namn: "Svanen",
+      konstnär: "Hilma af Klint",
+      år: 1915,
+    }),
+    (painting3 = {
+      namn: "Självporträtt med törnehalsband",
+      konstnär: "Frida Kahlo",
+      år: 1940,
+    }),
+  ];
 
+  let skriet = {
+      namn: "Skriet",
+      konstnär: "Edvard Munch",
+      år: 1893
+  }
+  paintings.push(skriet);
+  console.log(paintings[paintings.length - 1].år);
+  paintings.pop();
+  paintings.pop();
+  paintings.pop();
+  console.log(paintings.length);
+}

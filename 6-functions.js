@@ -1,4 +1,4 @@
-﻿
+﻿extraFun2();
 function fun1() {
 
     /*
@@ -18,6 +18,14 @@ function fun1() {
     --------
 
     */
+    sayHi();
+    sayHi();
+    function sayHi() {
+        console.log(`
+        ------ 
+        ------ VÄLKOMMEN
+        ------`);
+    }
 
 }
 
@@ -33,6 +41,14 @@ function fun2() {
     --------
 
     */
+    sayHi("Lo");
+    function sayHi(name) {
+        console.log(`
+        ------ 
+        ------ VÄLKOMMEN ${name}
+        ------`);
+        
+    }
 
 }
 
@@ -51,6 +67,17 @@ function fun3() {
         Lisa är myndig
         Obs! Ragnar är inte myndig!
     */
+        ärMyndig("Peter", 16);
+        ärMyndig("Lisa", 26);
+        ärMyndig("Ragnar", 15);
+   function ärMyndig(name, age) {
+       if(age >= 18){
+           console.log(`${name} är myndig`);
+       } else {
+           console.log(`Obs! ${name} är inte myndig!`);
+       }
+
+   }
 
 }
 
@@ -67,6 +94,12 @@ function fun4() {
         Momsen för varan är 250kr
 
     */
+   skrivUtMoms(1000);
+   skrivUtMoms(500);
+   function skrivUtMoms(pris) {
+       let moms = pris * 0.25;
+       console.log(`Momsen för varan är ${moms}`);
+   }
 
 }
 
@@ -93,6 +126,14 @@ function extraFun1() {
         * POTATIS
         * KÅLROT
     */
+   skrivUtRecept("Äpplekaka", ["Äpple", "Mjöl", "Kanel"]);
+   skrivUtRecept("Rotmos", ["Potatis", "Kålrot"]);
+   function skrivUtRecept(recept, ingredienser) {
+       console.log(`FÖR ATT GÖRA ${recept.toUpperCase()} BEHÖVS:`);
+       for (const item of ingredienser) {
+           console.log(`* ${item.toUpperCase()}`);
+       }
+   }
 
 }
 
@@ -107,11 +148,11 @@ function extraFun2() {
 
     Dessa anrop:
 
-        skrivUtMoms("tidning", 1000);
-        skrivUtMoms("restaurangbesök", 1000);
-        skrivUtMoms("flyg", 1000);
-        skrivUtMoms("falafel", 1000);
-        skrivUtMoms("hipsteröl", 1000);
+        skrivUtMoms("tidning", 1000);           6%
+        skrivUtMoms("restaurangbesök", 1000);   12%
+        skrivUtMoms("flyg", 1000);              6%
+        skrivUtMoms("falafel", 1000);           25%
+        skrivUtMoms("hipsteröl", 1000);         25%
 
     Ska ge svaren:
 
@@ -122,6 +163,19 @@ function extraFun2() {
         Momsen för en/ett hipsteröl som kostar 1000kr är 250kr
 
     */
+    function skrivUtMoms(vara, pris) {
+        let momsSats;
+        let moms =  pris * momsSats;
+        if(vara == "tidning"){
+            momsSats = 0.06;
+        } else if (vara =="restaurangbesök") {
+            momsSats = 0.12;
+        } else if (vara =="restaurangbesök") {
+            momsSats = 0.12;
+        }
+
+        console.log(`Momsen för en/ett ${vara} som kostar ${pris}kr är ${moms}kr`)
+    }
 
 }
 
